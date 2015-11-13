@@ -6,42 +6,32 @@ class Home extends Public_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->layout->setLayout('layouts/frontend/base');
-        $this->load->model('Post_model');
 	}
 
 	public function index()
 	{
-		$this->layout->setTitle("Home");
-		$this->layout->setKeywords("keywords");
-		$this->layout->setDescripcion("Descripción");
-		$this->layout->setSocialSiteName("Name");
-		$this->layout->setSocialTitle("Title");
-		$this->layout->setSocialResumen("Resumen");
-		$this->layout->setSocialDescripcion("Description");
-		$data = array();
+		$this->load->model('Escenario_model');
+		$this->load->model('Evidencia_model');
+		$this->load->model('Formulario_model');
 
-		//Layout load view
-		$this->layout->view('frontend/home/index', $data);
-	}
+		$result = $this->Escenario_model->get_last_entries();
+		//$form = $this->Formulario_model->get_alternativas_by_formulario_id(6);
+		foreach ($result as $key => $value) {
+			// obtener lista de evidencias
+			$data_evidencia = $this->Evidencia_model->get_by_escenario_id($value['id']);
+			foreach ($data_evidencia as $key1 => $value1) {
+				// obtener lista alternativas
+				$data_formulario = $this->Formulario_model->get_alternativas_by_formulario_id($value1['id_formulario']);
+				$data_evidencia[$key1]['data_formulario'] = $data_formulario;
+			}
 
-
-
-    /**
-     * Send form contact AJAX
-     */
-	public function send_form_contact_all_site()
-	{
-		if( ! $this->input->is_ajax_request() ) {
-			show_404();
+			$result[$key]['data_evidencia'] = $data_evidencia;
 		}
 
-		//Response
-		$response = array(
-			'respuesta' => true,
-			'mensaje' => "Mensaje enviado!"
-        );
-
-		echo json_encode($response);
+		echo json_encode($result);
+		exit;
 	}
+
+
+
 }

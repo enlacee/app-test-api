@@ -1,9 +1,11 @@
-RewriteEngine on
-#Aqui definimos a que carpetas se le permiten accesos desde la URL separado con la ( | )
+# configuracion index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|robots\.txt|site\.xml|images|assets)
-RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+RewriteRule .* index.php/$0 [PT,L]
+#raiz
+DirectoryIndex index.html index.php
 
 #Characters default 
 AddDefaultCharset UTF-8
-
-
