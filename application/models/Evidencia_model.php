@@ -12,10 +12,17 @@ class Evidencia_model extends CI_Model {
 
     public function get_by_escenario_id($id_escenario)
     {
-        $this->db->select("{$this->_name}.*, ac_escenarios_evidencias.id as id_escenario_evidencia")->from($this->_name);
+        $this->db->select()->from($this->_name);
         $this->db->join(
             'ac_escenarios_evidencias',
-            "ac_escenarios_evidencias.id_evidencia = {$this->_name}.id", 'join');
+            "ac_escenarios_evidencias.id_evidencia = {$this->_name}.id_evidencia",
+            'join'
+        );
+        $this->db->join(
+            'ac_formularios',
+            "ac_formularios.id_formulario = {$this->_name}.id_formulario",
+            'join'
+        );
         $this->db->where("ac_escenarios_evidencias.id_escenario", $id_escenario);
         //$this->db->limit();
         $query = $this->db->get();

@@ -18,7 +18,9 @@ class Formulario_model extends CI_Model {
         $this->db->select("ac_alternativas.*")->from('ac_alternativas');
         $this->db->join(
             'ac_alternativas_formularios',
-            "ac_alternativas_formularios.id_alternativa = ac_alternativas.id_alternativa", 'join');
+            "ac_alternativas_formularios.id_alternativa = ac_alternativas.id_alternativa",
+            'join'
+        );
         $this->db->where("ac_alternativas_formularios.id_formulario", $id_formulario);
         //$this->db->limit();
         $query = $this->db->get();

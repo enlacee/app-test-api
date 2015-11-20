@@ -13,7 +13,7 @@ class Escenario_model extends CI_Model {
 
     public function get_last_entries()
     {
-        $query = $this->db->get($this->_name, 22);
+        $query = $this->db->select('id_escenario, path_audio,')->get($this->_name, 22);
         return $query->result_array();
     }
 }

@@ -18,7 +18,7 @@ class Home extends Public_Controller {
 		//$form = $this->Formulario_model->get_alternativas_by_formulario_id(6);
 		foreach ($result as $key => $value) {
 			// obtener lista de evidencias
-			$data_evidencia = $this->Evidencia_model->get_by_escenario_id($value['id']);
+			$data_evidencia = $this->Evidencia_model->get_by_escenario_id($value['id_escenario']);
 			foreach ($data_evidencia as $key1 => $value1) {
 				// obtener lista alternativas
 				$data_formulario = $this->Formulario_model->get_alternativas_by_formulario_id($value1['id_formulario']);
@@ -28,6 +28,7 @@ class Home extends Public_Controller {
 			$result[$key]['data_evidencia'] = $data_evidencia;
 		}
 
+		//shuffle($result);
 		echo json_encode($result);
 		exit;
 	}
