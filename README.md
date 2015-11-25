@@ -7,3 +7,7 @@ Skeleton base for CodeIgniter version 3.x, so we add
 ## Custom App
 
 Page Demo *custom marco* : http://localhost/`home`
+
+# URL reporte
+
+	http://localhost/acopitan/free/app_test_api/report
