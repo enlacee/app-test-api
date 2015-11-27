@@ -75,6 +75,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		
 	</div>
+	
+	<h1>Applicaciòn Web Encuesta!</h1>
+	<p><a href="<?php echo base_url('report/index') ?>">Reporte general 1</a></p>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
