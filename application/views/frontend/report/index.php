@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Reportes Juego Web *mukito*</h1>
-	<p></p>
+	<h1>Applicaciòn Web!</h1>
+	<p>Reportes:	</p>
 	<ol>
 	    <li><a href="<?php echo site_url('report/index') ?>">Reporte Juego web</a></li>
 	    <li><a href="<?php echo site_url('report/index') ?>">Reporte Encuesta</a></li>

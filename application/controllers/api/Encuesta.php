@@ -34,6 +34,9 @@ class Encuesta extends REST_Controller
 			$data['p3'] = $p3;
 			$data['p4'] = $p4;
 			$data['p5'] = $p5;
+			$data['codigo_usuario'] = $this->post('codigo_usuario');
+			$data['id_juego'] = $this->post('id_juego');
+
 		  
 			$this->load->database();
 			$this->db->insert('ac_encuestas', $data);
