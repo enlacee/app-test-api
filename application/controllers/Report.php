@@ -5,6 +5,10 @@ class Report extends CI_Controller {
 
     public function index()
     {
+
+    }
+    
+    public function reporte_juego() {
 	    $this->load->model('Juego_model');
 	    $data = $this->Juego_model->get_entries();
 	    $lista = array();
@@ -33,15 +37,11 @@ class Report extends CI_Controller {
 	    }
 
 	    fclose($fp);
-
+	    $fecha = date('Y-m-d');
 	    header('Content-type: application/csv');
-	    header("Content-Disposition: inline; filename=reporte.csv");
+	    header("Content-Disposition: inline; filename=".__FUNCTION__ .'-'.$fecha . ".csv");
+
 	    readfile($fileReporte);
-    }
-    
-    public function reporte_juego() {
-	
-		return true;
     }
 	
 	public function test()
