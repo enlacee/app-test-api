@@ -5,8 +5,6 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-CREATE DATABASE `app_test` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `app_test`;
 
 DROP TABLE IF EXISTS `ac_alternativas`;
 CREATE TABLE `ac_alternativas` (

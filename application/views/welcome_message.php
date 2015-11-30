@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<p></p>
 	<ol>
 	    <li><a href="<?php echo site_url('report/index') ?>">Reporte Juego web</a></li>
-	    <li><a href="<?php echo site_url('report/index') ?>">Reporte Encuesta</a></li>
+	    <li><a href="<?php echo site_url('report/reporte_encuesta') ?>">Reporte Encuesta</a></li>
 	</ol>
 </div>
 
