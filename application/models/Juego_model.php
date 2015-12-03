@@ -15,7 +15,7 @@ class Juego_model extends CI_Model {
     {
         $query = $this->db->select('*')
             //->where('fecha_fin', 1)
-			->order_by('fecha_fin', 'desc')
+			->order_by('fecha_fin', 'asc')
             ->get($this->_name, 100);
 		
         return $query->result_array();
