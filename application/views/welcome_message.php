@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<h1>Reportes Juego Web *mukito*</h1>
 	<p></p>
 	<ol>
-	    <li><a href="<?php echo site_url('report/reporte_juego') ?>">Reporte Juego web</a></li>
+	    <li><a href="<?php echo site_url('reportPlay/index') ?>">Reporte Juego web</a></li>
 	    <li><a href="<?php echo site_url('report/reporte_encuesta') ?>">Reporte Encuesta</a></li>
 	</ol>
 </div>
